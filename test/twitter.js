@@ -45,3 +45,12 @@ describe('generate valid oauth signature', function () {
     })
   })
 })
+
+describe('make a nonce', function () {
+  it('should generate a random value', function (done) {
+    twitter.makeNonce(function (nonce) {
+      console.log(nonce);
+      done();
+    })
+  })
+})
