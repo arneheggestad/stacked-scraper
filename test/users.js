@@ -10,5 +10,12 @@ describe('should parse list of users to be scraped into network-specific objects
       queriesObj.facebook.length.should.eql(9);
       done();
     })    
+  });
+  it('should return an error for an unidentified network', function (done) {
+    var badUser = {'baduser': {'badnetwork': {'userId': 'foo', 'token': 'bar'}}};
+    users.parseUsers(badUser, function (err, queriesObj) {
+      err.should.exist;
+      done();
+    })
   })
 })

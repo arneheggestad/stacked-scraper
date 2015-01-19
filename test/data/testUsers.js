@@ -1,7 +1,7 @@
 // 10 users overall
 //  - 9 facebook
 //  - 8 twitter
-//  - 6 instagram
+//  - 5 instagram
 
 module.exports = {
 	'f5ln1svr7ff15y8t': {
