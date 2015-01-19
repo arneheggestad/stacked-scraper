@@ -31,7 +31,9 @@ describe('parse a good response', function () {
   it('should parse good returned data', function (done) {
     twitter.parseResponse(goodResponse, function (err, parsedPosts) {
       parsedPosts.foo.length.should.equal(5);
-      parsedPosts.foo[3].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
+      parsedPosts.foo[2].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555732376815693824');
+      parsedPosts.foo[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
+      parsedPosts.foo[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
       done();
     })
   })
@@ -49,7 +51,6 @@ describe('generate valid oauth signature', function () {
 describe('make a nonce', function () {
   it('should generate a random value', function (done) {
     twitter.makeNonce(function (nonce) {
-      console.log(nonce);
       done();
     })
   })
@@ -59,7 +60,7 @@ describe('generate oauth data for a particular user', function () {
   it('should generate valid oauth data', function (done) {
     var testUser = twitterData.singleUser;
     twitter.generateOauthData(testUser, function (err, signedOauthData) {
-      console.log(signedOauthData);
+      // console.log(signedOauthData);
       done();
     })
   })
