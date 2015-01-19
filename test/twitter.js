@@ -17,7 +17,8 @@ describe('get tweets', function () {
 describe('parse a good response', function () {
   it('should parse good returned data', function (done) {
     twitter.parseResponse(goodResponse, function (err, parsedPosts) {
-      console.log(parsedPosts);
+      parsedPosts.foo.length.should.equal(5);
+      parsedPosts.foo[3].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
       done();
     })
   })
