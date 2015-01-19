@@ -11,12 +11,12 @@ var testAuth = {
   url: 'https://api.twitter.com/1/statuses/update.json',
   method: 'POST',
   status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
-  oauthConsumerKey: 'xvz1evFS4wEEPTGEFPHBog',
-  oauthConsumerSecret: 'kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw',
-  oauthNonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
-  oauthTimestamp: '1318622958',
-  oauthToken: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
-  oauthTokenSecret: 'LswwdoUaIvS8ltyTt5jkRh4J50vUPVVHtR2YPi5kE'
+  consumerKey: 'xvz1evFS4wEEPTGEFPHBog',
+  consumerSecret: 'kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw',
+  nonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
+  timestamp: '1318622958',
+  token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
+  tokenSecret: 'LswwdoUaIvS8ltyTt5jkRh4J50vUPVVHtR2YPi5kE'
 }
 
 describe('get tweets', function () {
