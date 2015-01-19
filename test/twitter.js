@@ -30,10 +30,11 @@ describe('get tweets', function () {
 describe('parse a good response', function () {
   it('should parse good returned data', function (done) {
     twitter.parseResponse(goodResponse, function (err, parsedPosts) {
-      parsedPosts.foo.length.should.equal(5);
-      parsedPosts.foo[2].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555732376815693824');
-      parsedPosts.foo[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
-      parsedPosts.foo[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
+      parsedPosts.foo.twitter.posts.length.should.equal(5);
+      parsedPosts.foo.twitter.posts[2].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555732376815693824');
+      parsedPosts.foo.twitter.posts[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
+      parsedPosts.foo.twitter.posts[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
+      parsedPosts.foo.twitter.last.should.eql(556912997680287744);
       done();
     })
   })
