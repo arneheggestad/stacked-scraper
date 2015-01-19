@@ -54,3 +54,13 @@ describe('make a nonce', function () {
     })
   })
 })
+
+describe('generate oauth data for a particular user', function () {
+  it('should generate valid oauth data', function (done) {
+    var testUser = twitterData.singleUser;
+    twitter.generateOauthData(testUser, function (err, signedOauthData) {
+      console.log(signedOauthData);
+      done();
+    })
+  })
+})
