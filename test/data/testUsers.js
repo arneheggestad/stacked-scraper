@@ -10,8 +10,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker1',
+			token: '96448684-4vlHLC1X5PSUZvBkShbdIetoyD5ErFEploGiAiGJU',
+			tokenSecret: 'NRsD3q8yExfgSghXCCNewWsgyCTQ5syiHRKHJAqLJ8F1x',
+			last: '34322408173320824'
 		},
 		instagram: {
 			userId: '',
@@ -20,8 +22,9 @@ module.exports = {
 	},
 	'cgf5gowgdz7kwkyb': {
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker2',
+			token: '39849623-URgAnzFqp15SrDimRTL0NplNSFZ3YVwFULEwHFlhp',
+			tokenSecret: 'NRsD3q8yExfgSghXCCNewWsgyCTQ5syiHRKHJAqLJ8F1x'
 		},
 		instagram: {
 			userId: '',
@@ -40,8 +43,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker4',
+			token: '89010384-NwksjAULGcw1QjE4Lnm2IeuWMzPifmM6yrrO5oRY4',
+			tokenSecret: 'HXqMgzsTiF7nqqKZ7YvnYpP2A8k0Dov9NxWyDJb16f3An',
+			last: '27006977262674003'
 		}
 	},
 	'adtt3oajnq7bjyhn': {
@@ -50,8 +55,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker5',
+			token: '34241934-waeOw0lHSwsCTVkqlPbRuXMyj2MkB99ppp5sGINcX',
+			tokenSecret: 'mdBpbVXPWCy5gTZPzb3g1AZtNCzGWltYlGWkHaj315nWZ',
+			last: '50905826881358466'
 		},
 		instagram: {
 			userId: '',
@@ -64,8 +71,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker6',
+			token: '69842184-ft5tPgWRus2OUzEOfUT0lA2yHyQ6Y3FJlfgzNqPRl',
+			tokenSecret: '5M0WPpM9uSX5G4geCv3FkNbvKdamU4zkj4YFkQkshv7Kj',
+			last: '26551958962951798'
 		},
 		instagram: {
 			userId: '',
@@ -78,8 +87,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker7',
+			token: '72098011-MJmtmq7SKQNQ8MbzZMQ02ef0qdiQIAPDTHQwSk8Ai',
+			tokenSecret: 'ZeiyD7dFMM0NnNO1IUjTHUhRGieaBaXjkV9eIpYK5tZBb',
+			last: '43345953532726055'
 		}
 	},
 	'1axe4gcm4hzgf0ip': {
@@ -98,8 +109,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker9',
+			token: '70120600-hiNkIU8GBMApX9Mc1K4OQv82OYvzPDDBF8Hdw9Yqn',
+			tokenSecret: '4VGWW0gpenwD3NDAhRmpoqYhbSdXMsEIOFM8x04tRnydL',
+			last: '92135887066128201'
 		}
 	},
 	'q2b6dwqxz38suxho': {
@@ -108,8 +121,10 @@ module.exports = {
 			token: ''
 		},
 		twitter: {
-			userId: '',
-			token: ''
+			userId: 'fakeStacker10',
+			token: '68237490-IaHEQ5xAHAGxvz9hf1Nk62XuEHd1ARhuwH6l8Q4Xf',
+			tokenSecret: 'SO68b8zNxC36K4dzGXQbvGb22ZesHw0gf8h1k42W9XYmq',
+			last: '41289000477788663'
 		}
 	}
 }
