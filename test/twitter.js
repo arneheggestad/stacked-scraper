@@ -48,7 +48,7 @@ describe('parse a good response', function () {
       //   console.log(parsedPosts.foo.twitter.posts[i].postId, parsedPosts.foo.twitter.posts[i].permalink);
       // }
       // console.log(parsedPosts.foo.twitter.last);
-      parsedPosts.foo.twitter.last.should.eql(556912997680287744);
+      parsedPosts.foo.twitter.last.should.eql('556912997680287744');
       done();
     })
   })
