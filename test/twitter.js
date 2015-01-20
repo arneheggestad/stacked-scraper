@@ -8,34 +8,34 @@ var twitterData = require('./data/twitterData.js'),
     testAuth = twitterData.testAuth
     ;
 
-describe('twitter', function () {
+describe('twitter: ', function () {
   describe('parse a good response', function () {
     it('should return five posts', function (done) {
-      twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.twitter.posts.length.should.equal(5);
         done();
       })
     });
     it('should return the right permalink for post 3', function (done) {
-      twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.twitter.posts[2].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555732376815693824');
         done();
       })
     });
     it('should return the right permaline for post 5', function (done) {
-      twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.twitter.posts[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
         done();
       })
     });
     it('should return the right text content for post 5', function (done) {
-      twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.twitter.posts[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
         done();
       })
     });
     it('should update the \'last\' field correctly', function (done) {
-      twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         // console.log(parsedPosts.foo.twitter.posts.length);
         // for (var i = 0; i < parsedPosts.foo.twitter.posts.length; i++) {
         //   console.log(parsedPosts.foo.twitter.posts[i].postId, parsedPosts.foo.twitter.posts[i].permalink);
@@ -74,7 +74,7 @@ describe('twitter', function () {
     })
   })
 
-  describe('return normalized posts from a list of twitter users', function () {
+  describe('normalized posts: ', function () {
     // take list of users and build twitter API requests
     it('should generate twitter API requests for a set of users', function (done) {
       twitter.buildApiRequests(twitterUsers, function (err, twitterRequests) {
@@ -85,9 +85,11 @@ describe('twitter', function () {
     })
     // make the requests to twitter
     it('make requests to twitter', function (done) {
+      done();
     })
     // build object with normalized posts
     it('build object with normalized posts', function (done) {
+      done();
     })
     // return object to compiler
   })
