@@ -85,7 +85,13 @@ describe('twitter: ', function () {
     })
     // make the requests to twitter
     it('make requests to twitter', function (done) {
-      done();
+      twitter.buildApiRequests(twitterUsers, function (err, twitterRequests) {
+        twitter.doQuery(twitterRequests, function (err, twitterResponses) {
+          if (err) { console.log(err); }
+          if (twitterResponses) { console.log(twitterResponses); }
+          done();
+        })
+      })
     })
     // build object with normalized posts
     it('build object with normalized posts', function (done) {
