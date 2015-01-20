@@ -9,14 +9,6 @@ var twitterData = require('./data/twitterData.js'),
     ;
 
 describe('twitter', function () {
-  describe('get tweets', function () {
-    it('should get a user\'s recent tweets', function (done) {
-      twitter.getPosts(twitterUsers, function (err, posts) {
-        done();
-      })
-    })
-  })
-
   describe('parse a good response', function () {
     it('should return five posts', function (done) {
       twitter.parseResponse(goodResponse, function (err, parsedPosts) {
