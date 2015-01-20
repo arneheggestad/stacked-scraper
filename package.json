@@ -24,6 +24,7 @@
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.0",
     "jshint-stylish-ex": "^0.2.0",
+    "mocha": "^2.1.0",
     "should": "^4.6.1"
   },
   "dependencies": {
