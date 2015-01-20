@@ -4,20 +4,9 @@ var should = require('should'),
 
 var twitterData = require('./data/twitterData.js'),
     twitterUsers = twitterData.users,
-    goodResponse = twitterData.goodResponse;
-
-var testAuth = {
-  // demo from https://dev.twitter.com/oauth/overview/creating-signatures
-  url: 'https://api.twitter.com/1/statuses/update.json',
-  method: 'POST',
-  status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
-  consumerKey: 'xvz1evFS4wEEPTGEFPHBog',
-  consumerSecret: 'kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw',
-  nonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
-  timestamp: '1318622958',
-  token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
-  tokenSecret: 'LswwdoUaIvS8ltyTt5jkRh4J50vUPVVHtR2YPi5kE'
-}
+    goodResponse = twitterData.goodResponse,
+    testAuth = twitterData.testAuth
+    ;
 
 describe('get tweets', function () {
   it('should get a user\'s recent tweets', function (done) {
@@ -28,12 +17,37 @@ describe('get tweets', function () {
 })
 
 describe('parse a good response', function () {
-  it('should parse good returned data', function (done) {
+  it('should return five posts', function (done) {
     twitter.parseResponse(goodResponse, function (err, parsedPosts) {
       parsedPosts.foo.twitter.posts.length.should.equal(5);
+      done();
+    })
+  });
+  it('should return the right permalink for post 3', function (done) {
+    twitter.parseResponse(goodResponse, function (err, parsedPosts) {
       parsedPosts.foo.twitter.posts[2].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555732376815693824');
-      parsedPosts.foo.twitter.posts[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
+      done();
+    })
+  });
+  it('should return the right permaline for post 5', function (done) {
+    twitter.parseResponse(goodResponse, function (err, parsedPosts) {
       parsedPosts.foo.twitter.posts[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
+      done();
+    })
+  });
+  it('should return the right text content for post 5', function (done) {
+    twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      parsedPosts.foo.twitter.posts[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
+      done();
+    })
+  });
+  it('should update the \'last\' field correctly', function (done) {
+    twitter.parseResponse(goodResponse, function (err, parsedPosts) {
+      // console.log(parsedPosts.foo.twitter.posts.length);
+      // for (var i = 0; i < parsedPosts.foo.twitter.posts.length; i++) {
+      //   console.log(parsedPosts.foo.twitter.posts[i].postId, parsedPosts.foo.twitter.posts[i].permalink);
+      // }
+      // console.log(parsedPosts.foo.twitter.last);
       parsedPosts.foo.twitter.last.should.eql(556912997680287744);
       done();
     })
