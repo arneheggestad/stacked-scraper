@@ -16,12 +16,12 @@ describe('facebook', function () {
         done();
       })
     });
-    // it('should return the right permalink for post 3', function (done) {
-    //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
-    //     parsedPosts.foo.facebook.posts[2].permalink.should.equal('https://facebook.com/ArneHeggestad/status/555732376815693824');
-    //     done();
-    //   })
-    // });
+    it('should return the right permalink for post 4', function (done) {
+      facebook.parseResponse(goodResponse, function (err, parsedPosts) {
+        parsedPosts.foo.facebook.posts[3].permalink.should.eql('https://www.facebook.com/10106338419358611/posts/10106322302232461');
+        done();
+      })
+    });
     // it('should return the right permaline for post 5', function (done) {
     //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
     //     parsedPosts.foo.facebook.posts[4].permalink.should.equal('https://facebook.com/ArneHeggestad/status/555731518531055616');
