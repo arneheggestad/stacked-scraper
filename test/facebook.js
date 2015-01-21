@@ -22,9 +22,15 @@ describe('facebook', function () {
         done();
       })
     });
-    it('shouldl create the right timestamp for post 1', function (done) {
+    it('should create the right timestamp for post 1', function (done) {
       facebook.parseResponse(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.facebook.posts[0].timestamp.should.eql('2015-01-20T21:14:04+0000');
+        done();
+      })
+    })
+    it('should show that post 0 has an image', function (done) {
+      facebook.parseResponse(goodResponse, function (err, parsedPosts) {
+        parsedPosts.foo.facebook.posts[0].content.img[0].should.eql('https://scontent-b.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/s130x130/10487585_10106338579697291_4827880597232105485_n.jpg?oh=7635ecec7addc0865d48c8705ea9b488&oe=55644970');
         done();
       })
     })
