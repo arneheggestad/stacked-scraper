@@ -22,6 +22,12 @@ describe('facebook', function () {
         done();
       })
     });
+    it('shouldl create the right timestamp for post 1', function (done) {
+      facebook.parseResponse(goodResponse, function (err, parsedPosts) {
+        parsedPosts.foo.facebook.posts[0].timestamp.should.eql('2015-01-20T21:14:04+0000');
+        done();
+      })
+    })
     // it('should return the right permaline for post 5', function (done) {
     //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
     //     parsedPosts.foo.facebook.posts[4].permalink.should.equal('https://facebook.com/ArneHeggestad/status/555731518531055616');
