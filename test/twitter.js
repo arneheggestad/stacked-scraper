@@ -48,7 +48,7 @@ describe('twitter: ', function () {
     })
     it('should add a timestamp', function (done) {
       twitter.parseResponses(goodResponse, function (err, parsedPosts) {
-        //
+        parsedPosts.foo.twitter.posts[0].timestamp.should.eql('2015-01-18T20:36:20.000Z');
         done();
       })
     })
