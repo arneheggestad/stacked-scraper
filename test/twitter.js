@@ -8,6 +8,9 @@ var twitterData = require('./data/twitterData.js'),
     testAuth = twitterData.testAuth
     ;
 
+var secrets = require('../credentials/secrets.js'),
+    validUser = secrets.twitterValid;
+
 describe('twitter: ', function () {
   describe('parse a good response', function () {
     it('should return six posts', function (done) {
@@ -80,7 +83,6 @@ describe('twitter: ', function () {
       })
     })
   })
-
   describe('normalized posts: ', function () {
     // take list of users and build twitter API requests
     it('should generate twitter API requests for a set of users', function (done) {
@@ -105,5 +107,13 @@ describe('twitter: ', function () {
       done();
     })
     // return object to compiler
+  })
+  describe('using oauth: ', function () {
+    it('should get posts', function (done) {
+      validUser.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json&user_id=' + validUser.userId;
+      twitter.getPosts(validUser, function () {
+        done();
+      }) 
+    })
   })
 })
