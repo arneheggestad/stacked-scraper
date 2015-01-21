@@ -24,7 +24,7 @@ describe('facebook', function () {
     });
     it('should create the right timestamp for post 1', function (done) {
       facebook.parseResponse(goodResponse, function (err, parsedPosts) {
-        parsedPosts.foo.facebook.posts[0].timestamp.should.eql('2015-01-20T21:14:04+0000');
+        parsedPosts.foo.facebook.posts[0].timestamp.should.eql('2015-01-20T21:14:04.000Z');
         done();
       })
     })
@@ -34,18 +34,6 @@ describe('facebook', function () {
         done();
       })
     })
-    // it('should return the right permaline for post 5', function (done) {
-    //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
-    //     parsedPosts.foo.facebook.posts[4].permalink.should.equal('https://facebook.com/ArneHeggestad/status/555731518531055616');
-    //     done();
-    //   })
-    // });
-    // it('should return the right text content for post 5', function (done) {
-    //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
-    //     parsedPosts.foo.facebook.posts[4].content.text.should.equal('My morning excitement: bought some refreshments for a client meeting, then realized I could deduct them as a business expense. Hurray!');
-    //     done();
-    //   })
-    // });
     // it('should update the \'last\' field correctly', function (done) {
     //   facebook.parseResponse(goodResponse, function (err, parsedPosts) {
     //     // console.log(parsedPosts.foo.facebook.posts.length);
