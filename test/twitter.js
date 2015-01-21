@@ -112,17 +112,18 @@ describe('twitter: ', function () {
   describe('using oauth: ', function () {
     it('should get 5 raw posts', function (done) {
       validUser['54b592a9853862b8268e095f'].url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=' + validUser['54b592a9853862b8268e095f'].userId + '&count=5';
+      console.log(validUser['54b592a9853862b8268e095f'])
       twitter.doOauthQuery(validUser['54b592a9853862b8268e095f'], function (err, rawPosts) {
         if (err) { console.log(err); }
         rawPosts.length.should.eql(5);
         done();
       })
-    })
-  })
-  it('should return normalized posts from twitter', function (done) {
-    twitter.getPosts(validUser, function (err, normalizedPosts) {
-      console.log(normalizedPosts);
-      done();
-    })
+    });
+    // it('should return normalized posts from twitter', function (done) {
+    //   twitter.getPosts(validUser, function (err, normalizedPosts) {
+    //     console.log(normalizedPosts);
+    //     done();
+    //   })
+    // })
   })
 })
