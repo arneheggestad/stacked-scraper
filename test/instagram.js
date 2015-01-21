@@ -5,12 +5,17 @@ var instagramData = require('./data/instagramData.js'),
     goodResponse = instagramData.goodResponse;
 
 var secrets = require('../credentials/secrets.js'),
-    instagramUser = secrets.validInstagram;
+    instagramUser = {
+      '54b592a9853862b8268e095f': secrets.instagramValid
+    };
 
 describe('instagram: ', function () {
   describe('raw posts: ', function () {
-    it('get them', function (done) {
-      done();
+    it('get posts', function (done) {
+      instagram.getPosts(instagramUser, function (err, rawPosts) {
+        console.log(rawPosts)
+        done();
+      })
     })
   })
   describe('normalize posts: ', function () {
