@@ -93,15 +93,15 @@ describe('twitter: ', function () {
       })
     })
     // make the requests to twitter
-    it('make requests to twitter', function (done) {
-      twitter.buildApiRequests(twitterUsers, function (err, twitterRequests) {
-        twitter.doQuery(twitterRequests, function (err, twitterResponses) {
-          if (err) { console.log(err); }
-          if (twitterResponses) { console.log(twitterResponses); }
-          done();
-        })
-      })
-    })
+    // it('make requests to twitter', function (done) {
+    //   twitter.buildApiRequests(twitterUsers, function (err, twitterRequests) {
+    //     twitter.doQuery(twitterRequests, function (err, twitterResponses) {
+    //       if (err) { console.log(err); }
+    //       if (twitterResponses) { console.log(twitterResponses); }
+    //       done();
+    //     })
+    //   })
+    // })
     // build object with normalized posts
     it('build object with normalized posts', function (done) {
       done();
@@ -110,7 +110,8 @@ describe('twitter: ', function () {
   })
   describe('using oauth: ', function () {
     it('should get posts', function (done) {
-      validUser.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json&user_id=' + validUser.userId;
+      validUser.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=' + validUser.userId;
+      console.log(validUser.url);
       twitter.getPosts(validUser, function () {
         done();
       }) 
