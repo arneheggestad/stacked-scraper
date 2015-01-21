@@ -12,5 +12,18 @@ describe('separate master user object into network-specific objects: ', function
       done();
     })    
   });
-
+	it('should find 5 instagram users', function (done) {
+    users.parseUsers(testUsers, function (err, queriesObj) {
+	    var igUsers = Object.keys(queriesObj.instagram);
+	    igUsers.length.should.eql(5);
+      done();
+    })    
+  });
+	it('should find 8 twitter users', function (done) {
+    users.parseUsers(testUsers, function (err, queriesObj) {
+	    var twUsers = Object.keys(queriesObj.twitter);
+	    twUsers.length.should.eql(8);
+      done();
+    })    
+  });
 })
