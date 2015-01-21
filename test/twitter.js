@@ -10,9 +10,9 @@ var twitterData = require('./data/twitterData.js'),
 
 describe('twitter: ', function () {
   describe('parse a good response', function () {
-    it('should return five posts', function (done) {
+    it('should return six posts', function (done) {
       twitter.parseResponses(goodResponse, function (err, parsedPosts) {
-        parsedPosts.foo.twitter.posts.length.should.equal(5);
+        parsedPosts.foo.twitter.posts.length.should.equal(6);
         done();
       })
     });
@@ -36,12 +36,19 @@ describe('twitter: ', function () {
     });
     it('should update the \'last\' field correctly', function (done) {
       twitter.parseResponses(goodResponse, function (err, parsedPosts) {
-        // console.log(parsedPosts.foo.twitter.posts.length);
-        // for (var i = 0; i < parsedPosts.foo.twitter.posts.length; i++) {
-        //   console.log(parsedPosts.foo.twitter.posts[i].postId, parsedPosts.foo.twitter.posts[i].permalink);
-        // }
-        // console.log(parsedPosts.foo.twitter.last);
-        parsedPosts.foo.twitter.last.should.eql('556912997680287744');
+        parsedPosts.foo.twitter.last.should.eql('557907759984021505');
+        done();
+      })
+    })
+    it('should handle the image in post 6', function (done) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
+        parsedPosts.foo.twitter.posts[5].content.img[0].should.eql('http://pbs.twimg.com/media/B74WJtHIYAAsJVd.jpg');
+        done();
+      })
+    })
+    it('should add a timestamp', function (done) {
+      twitter.parseResponses(goodResponse, function (err, parsedPosts) {
+        //
         done();
       })
     })
