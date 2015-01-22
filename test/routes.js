@@ -2,7 +2,7 @@ var should = require('should'),
     routes = require('../lib/routes.js')
     ;
 
-var secret = require('../credentials/secret.js'),
+var secrets = require('../credentials/secrets.js'),
     testUsers = {
       'foo': {
         twitter: secrets.twitterValid,
