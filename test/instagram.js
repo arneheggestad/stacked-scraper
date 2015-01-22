@@ -13,7 +13,7 @@ describe('instagram: ', function () {
   describe('raw posts: ', function () {
     it('get posts', function (done) {
       instagram.getPosts(instagramUser, function (err, normalizedPosts) {
-        console.log(normalizedPosts[ '54b592a9853862b8268e095f' ].instagram.posts)
+        // console.log(normalizedPosts[ '54b592a9853862b8268e095f' ].instagram.posts)
         done();
       })
     })
