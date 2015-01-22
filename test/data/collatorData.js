@@ -1,4 +1,4 @@
-var compilerData = {
+var collatorData = {
   testPosts: {
     twitter: {
       'f5ln1svr7ff15y8t': {
@@ -87,4 +87,4 @@ var compilerData = {
   }
 }
 
-module.exports = compilerData;
+module.exports = collatorData;
