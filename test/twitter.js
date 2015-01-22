@@ -110,10 +110,9 @@ describe('twitter: ', function () {
     // return object to compiler
   // })
   describe('using oauth: ', function () {
-    it('should get 5 raw posts', function (done) {
+    it('should get 5 raw posts from @StackedSports', function (done) {
       validUser['54b592a9853862b8268e095f'].url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=' + validUser['54b592a9853862b8268e095f'].userId + '&count=5';
       twitter.doOauthQuery(validUser['54b592a9853862b8268e095f'], function (err, rawPosts) {
-        if (err) { console.log(err); }
         rawPosts.length.should.eql(5);
         done();
       })
