@@ -1,3 +1,5 @@
+var secrets = require('../../credentials/secrets.js');
+
 var collatorData = {
   testPosts: {
     twitter: {

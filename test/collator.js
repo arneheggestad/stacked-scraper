@@ -4,7 +4,8 @@ var should = require('should'),
 
 var testData = require('./data/collatorData.js'),
     testPosts = testData.testPosts,
-    unsortedPosts = testData.unsortedPosts
+    unsortedPosts = testData.unsortedPosts,
+    validUsers = testData.users
     ;
 
 describe('post collator tests', function () {
