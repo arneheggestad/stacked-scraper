@@ -84,6 +84,26 @@ var collatorData = {
       posts: []
      }
     }
+  },
+  unsortedPosts: {
+    'foo': {
+      posts: [{
+        timestamp: '2014-12-30T07:29:23.000Z',
+        content: {
+          text: 'Second post'
+        }
+      },{
+        timestamp: '2015-01-13T19:37:13.000Z',
+        content: {
+          text: 'First post'
+        }
+      }, {
+        timestamp: '2014-12-25T21:52:31.000Z',
+        content: {
+          text: 'Third post'
+        }
+      }]
+    }
   }
 }
 
