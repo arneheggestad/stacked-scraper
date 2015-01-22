@@ -26,7 +26,7 @@ describe('twitter: ', function () {
         done();
       })
     });
-    it('should return the right permaline for post 5', function (done) {
+    it('should return the right permalink for post 5', function (done) {
       twitter.parseResponses(goodResponse, function (err, parsedPosts) {
         parsedPosts.foo.twitter.posts[4].permalink.should.equal('https://twitter.com/ArneHeggestad/status/555731518531055616');
         done();
@@ -112,7 +112,6 @@ describe('twitter: ', function () {
   describe('using oauth: ', function () {
     it('should get 5 raw posts', function (done) {
       validUser['54b592a9853862b8268e095f'].url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=' + validUser['54b592a9853862b8268e095f'].userId + '&count=5';
-      console.log(validUser['54b592a9853862b8268e095f'])
       twitter.doOauthQuery(validUser['54b592a9853862b8268e095f'], function (err, rawPosts) {
         if (err) { console.log(err); }
         rawPosts.length.should.eql(5);
