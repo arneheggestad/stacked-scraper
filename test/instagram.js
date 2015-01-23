@@ -12,8 +12,9 @@ var secrets = require('../credentials/secrets.js'),
 describe('instagram: ', function () {
   describe('raw posts: ', function () {
     it('get posts', function (done) {
+      instagramUser['54b592a9853862b8268e095f'].last = '897227155268837889_436702183';
       instagram.getPosts(instagramUser, function (err, normalizedPosts) {
-        // console.log(normalizedPosts[ '54b592a9853862b8268e095f' ].instagram.posts)
+        console.log(normalizedPosts);
         done();
       })
     })
