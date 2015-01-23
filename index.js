@@ -5,7 +5,7 @@ var scraper = function (userObj, secrets, callback) {
   // method dependencies
   var users = require('./lib/users.js'),
       twitter = require('./lib/twitter.js')(secrets),
-      // facebook = require('./lib/facebook.js'),
+      facebook = require('./lib/facebook.js'),
       instagram = require('./lib/instagram.js'),
       collator = require('./lib/collator.js')
       ;
@@ -16,7 +16,7 @@ var scraper = function (userObj, secrets, callback) {
   users.parseUsers(userObj, function (err, masterQueriesObj) {
     if (err) { throw (err); } // throw errors for now
     var twitterQueriesObj = masterQueriesObj.twitter;
-    // var facebookQueriesObj = masterQueriesObj.facebook;
+    var facebookQueriesObj = masterQueriesObj.facebook;
     var instagramQueriesObj = masterQueriesObj.instagram;
     // pass appropriate reconfigured userObj to each network
     async.parallel({
@@ -31,7 +31,13 @@ var scraper = function (userObj, secrets, callback) {
       },
       facebook: function (asyncCallback) {
         // FACEBOOK STUFF GOES HERE
-        asyncCallback (null, null);
+        if (facebookQueriesObj === undefined) {
+          asyncCallback(null, null);
+        } else {
+          facebook.getPosts(facebookQueriesObj, function (err, normalizedFacebookPosts) {
+            asyncCallback (null, null);
+          })
+        }
       },
       instagram: function (asyncCallback) {
         if (instagramQueriesObj === undefined) {
