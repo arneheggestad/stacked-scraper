@@ -35,7 +35,7 @@ var scraper = function (userObj, secrets, callback) {
           asyncCallback(null, null);
         } else {
           facebook.getPosts(facebookQueriesObj, function (err, normalizedFacebookPosts) {
-            asyncCallback (null, null);
+            asyncCallback (null, normalizedFacebookPosts);
           })
         }
       },
