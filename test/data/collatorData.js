@@ -73,17 +73,8 @@ var collatorData = {
             posts: [ {}, {}, {} ]
           }          
         }
-    //   },
-    // facebook: {
-    //   'f5ln1svr7ff15y8t': {
-    //   },
-    //   '1n2z0vto9if56fq9': {
-    //   }
-    // },
-    // instagram: {
-    //   'f5ln1svr7ff15y8t': {
-    //   }
-    }
+      },
+    facebook: null
   },
   unsortedPosts: {
     'foo': {

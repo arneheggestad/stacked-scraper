@@ -21,18 +21,26 @@ var scraper = function (userObj, secrets, callback) {
     // pass appropriate reconfigured userObj to each network
     async.parallel({
       twitter: function (asyncCallback) {
-        twitter.getPosts(twitterQueriesObj, function (err, normalizedTwitterPosts) {
-          asyncCallback (null, normalizedTwitterPosts);
-        })
+        if (twitterQueriesObj === undefined) {
+          asyncCallback(null, null);
+        } else {
+          twitter.getPosts(twitterQueriesObj, function (err, normalizedTwitterPosts) {
+            asyncCallback (null, normalizedTwitterPosts);
+          })
+        }
       },
-      // facebook: function (asyncCallback) {
-      //   // FACEBOOK STUFF GOES HERE
-      //   asyncCallback ();
-      // },
+      facebook: function (asyncCallback) {
+        // FACEBOOK STUFF GOES HERE
+        asyncCallback (null, null);
+      },
       instagram: function (asyncCallback) {
-        instagram.getPosts(instagramQueriesObj, function (err, normalizedInstagramPosts) {
-          asyncCallback (null, normalizedInstagramPosts);
-        })
+        if (instagramQueriesObj === undefined) {
+          asyncCallback(null, null);
+        } else {
+          instagram.getPosts(instagramQueriesObj, function (err, normalizedInstagramPosts) {
+            asyncCallback (null, normalizedInstagramPosts);
+          })
+        }
       }
     },
     // async callback:
