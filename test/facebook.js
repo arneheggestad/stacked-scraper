@@ -47,21 +47,9 @@ describe('facebook: ', function () {
   //   })
   // })
   describe('get posts', function () {
-    // it('should get posts for Beau', function (done) {
-    //   facebook.getPosts(validUser, function (err, normalizedPosts) {
-    //     console.log(normalizedPosts[ '54b7149858b9aeb81f14fb04' ].facebook.posts.length);
-    //     done();
-    //   })
-    // })
-    it('should get posts for Arne', function (done) {
-      var arne = {
-        'arne': {
-          userId: '10106338419358611',
-          accessToken: 'CAACEdEose0cBALmTYWjlaNYXDK9fslar4OrxoinAN6crPeyEWZAZCoLFKZAEqKGD76laQTP2hSsbEh55ZAaglhKMmnFUBRnCHApMjgT7TSxw4JHrPJkWoSADVbhanGmAXXbayE7pP66pmOV8mngaMKAxlGENzPVHA3z7rZB3AsHXUeQTafouTNwJRSbTWuZAuKpReylaZAllYY9Gthm9YeSo301JuhQxO0ZD'            
-        }
-      }
-      facebook.getPosts(arne, function (err, normalizedPosts) {
-        console.log(normalizedPosts[ 'arne' ].facebook.posts.length);
+    it('should get posts for Beau', function (done) {
+      facebook.getPosts(validUser, function (err, normalizedPosts) {
+        console.log(normalizedPosts[ '54b7149858b9aeb81f14fb04' ].facebook.posts.length);
         done();
       })
     })

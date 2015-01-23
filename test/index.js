@@ -4,12 +4,9 @@ var should = require('should'),
 
 var secrets = require('../credentials/secrets.js'),
     testUsers = {
-      '54b592a9853862b8268e095f': {
+      'beau': {
         twitter: secrets.twitterValid,
         instagram: secrets.instagramValid
-      },
-      '54b7149858b9aeb81f14fb04': {
-        facebook: secrets.facebookValid
       }
     };
 
