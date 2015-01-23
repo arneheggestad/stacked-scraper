@@ -1,5 +1,5 @@
 {
-  "name": "stackedSports-scraper",
+  "name": "stacked-scraper",
   "version": "0.0.0",
   "description": "Social network API scraper for Stacked Sports",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arneheggestad/stackedSports-scraper.git"
+    "url": "https://github.com/arneheggestad/stacked-scraper.git"
   },
   "author": "Arne Heggestad <arne.heggestad@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arneheggestad/stackedSports-scraper/issues"
+    "url": "https://github.com/arneheggestad/stacked-scraper/issues"
   },
-  "homepage": "https://github.com/arneheggestad/stackedSports-scraper",
+  "homepage": "https://github.com/arneheggestad/stacked-scraper",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-jscs": "^1.4.0",
