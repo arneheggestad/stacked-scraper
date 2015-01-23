@@ -1,16 +1,15 @@
-var should = require('should'),
-    twitter = require('../lib/twitter.js')
+var secrets = require('../credentials/secrets.js'),
+    should = require('should'),
+    twitter = require('../lib/twitter.js')(secrets)
     ;
 
 var twitterData = require('./data/twitterData.js'),
     twitterUsers = twitterData.users,
     goodResponse = twitterData.goodResponse,
-    testAuth = twitterData.testAuth
-    ;
-
-var secrets = require('../credentials/secrets.js'),
+    testAuth = twitterData.testAuth,
     validUser = {
-      '54b592a9853862b8268e095f': secrets.twitterValid};
+      '54b592a9853862b8268e095f': secrets.twitterValid}
+    ;
 
 describe('twitter: ', function () {
   describe('parse a good response', function () {
