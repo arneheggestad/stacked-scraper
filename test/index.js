@@ -1,9 +1,9 @@
 var should = require('should'),
-    index = require('../index.js')
+    secrets = require('../credentials/secrets.js'),
+    index = require('../index.js')(secrets)
     ;
 
-var secrets = require('../credentials/secrets.js'),
-    testUsers = {
+var testUsers = {
       'beau': {
         twitter: secrets.twitterValid,
         instagram: secrets.instagramValid
@@ -26,7 +26,8 @@ var secrets = require('../credentials/secrets.js'),
 // })
 describe('index: ', function () {
   it('should handle receiving a null network object', function (done) {
-    index(testUsers, secrets, function (err, collatedPosts) {
+    index(testUsers, function (err, collatedPosts) {
+      console.log(collatedPosts);
       done();
     })
   })
