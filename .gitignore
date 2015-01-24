@@ -31,3 +31,6 @@ node_modules
 xmlExamples.txt
 notes.txt
 .DS_Store
+.jscrc
+.jshintrc
+gulpfile.js
