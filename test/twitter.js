@@ -1,4 +1,4 @@
-var secrets = require('../credentials/secrets.js'),
+var secrets = require('./credentials/secrets.js'),
     should = require('should'),
     twitter = require('../lib/twitter.js')(secrets)
     ;

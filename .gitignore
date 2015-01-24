@@ -34,3 +34,4 @@ notes.txt
 .jscrc
 .jshintrc
 gulpfile.js
+test/credentials

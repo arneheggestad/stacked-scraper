@@ -4,7 +4,7 @@ var should = require('should'),
 var instagramData = require('./data/instagramData.js'),
     goodResponse = instagramData.goodResponse;
 
-var secrets = require('../credentials/secrets.js'),
+var secrets = require('./credentials/secrets.js'),
     instagramUser = {
       '54b592a9853862b8268e095f': secrets.instagramValid
     };

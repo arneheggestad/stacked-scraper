@@ -8,7 +8,7 @@ var facebookData = require('./data/facebookData.js'),
     testAuth = facebookData.testAuth
     ;
 
-var secrets = require('../credentials/secrets.js'),
+var secrets = require('./credentials/secrets.js'),
     validUser = {
       '54b7149858b9aeb81f14fb04': secrets.facebookValid
     }

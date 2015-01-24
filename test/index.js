@@ -1,5 +1,5 @@
 var should = require('should'),
-    secrets = require('../credentials/secrets.js'),
+    secrets = require('./credentials/secrets.js'),
     index = require('../index.js')(secrets)
     ;
 
