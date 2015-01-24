@@ -31,7 +31,7 @@ node_modules
 xmlExamples.txt
 notes.txt
 .DS_Store
-.jscrc
+.jscsrc
 .jshintrc
 gulpfile.js
 test/credentials
