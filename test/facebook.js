@@ -49,7 +49,7 @@ describe('facebook: ', function () {
   describe('get posts', function () {
     it('should get posts for Beau', function (done) {
       facebook.getPosts(validUser, function (err, normalizedPosts) {
-        console.log(normalizedPosts[ '54b7149858b9aeb81f14fb04' ].facebook.posts.length);
+        console.log(normalizedPosts[ '54b7149858b9aeb81f14fb04' ].facebook);
         done();
       })
     })
