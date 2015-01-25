@@ -24,7 +24,11 @@ var scraper = function (secrets) {
             asyncCallback(null, null);
           } else {
             twitter.getPosts(twitterQueriesObj, function (err, normalizedTwitterPosts) {
-              asyncCallback (null, normalizedTwitterPosts);
+              if (err) {
+                asyncCallback (err);
+              } else {
+                asyncCallback (null, normalizedTwitterPosts);
+              }
             })
           }
         },
@@ -33,7 +37,11 @@ var scraper = function (secrets) {
             asyncCallback(null, null);
           } else {
             facebook.getPosts(facebookQueriesObj, function (err, normalizedFacebookPosts) {
-              asyncCallback (null, normalizedFacebookPosts);
+              if (err) {
+                asyncCallback (err);
+              } else {
+                asyncCallback (null, normalizedFacebookPosts);
+              }
             })
           }
         },
@@ -42,7 +50,11 @@ var scraper = function (secrets) {
             asyncCallback(null, null);
           } else {
             instagram.getPosts(instagramQueriesObj, function (err, normalizedInstagramPosts) {
-              asyncCallback (null, normalizedInstagramPosts);
+              if (err) {
+                asyncCallback (err);
+              } else {
+                asyncCallback (null, normalizedInstagramPosts);
+              }
             })
           }
         }
@@ -53,7 +65,7 @@ var scraper = function (secrets) {
       function (err, results) {
         // results should be { twitter: {twitterPosts}, facebook: {facebookPosts}, ... }
         if (err) {
-          throw (err); // for now; fix this soon
+          return callback (err);
         } else {
           // console.log(results);
           collator.merge(results, function (err, finalPostObject) {
