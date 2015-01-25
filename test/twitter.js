@@ -66,7 +66,12 @@ describe('twitter: ', function () {
     });
     it('should return normalized posts from twitter', function (done) {
       twitter.getPosts(validUser, function (err, normalizedPosts) {
+        console.log(normalizedPosts);
         console.log('live twitter posts retrieved: ' + normalizedPosts[ '54b592a9853862b8268e095f' ].twitter.posts.length);
+        var posts = normalizedPosts[ '54b592a9853862b8268e095f' ].twitter.posts;
+        posts.forEach(function (post) {
+          console.log(post.postId);
+        })
         done();
       })
     })
