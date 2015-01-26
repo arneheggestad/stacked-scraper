@@ -13,7 +13,12 @@ var scraper = function (secrets) {
     // take userObj, which contains Stacked Sports User IDs and associated networks and token
     // reconfigure userObj by network
     users.parseUsers(userObj, function (err, masterQueriesObj) {
-      if (err) { throw (err); } // throw errors for now
+      if (err) {
+        var userErr = {
+          users: err
+        }
+        return callback (userErr);
+      }
       var twitterQueriesObj = masterQueriesObj.twitter,
           facebookQueriesObj = masterQueriesObj.facebook,
           instagramQueriesObj = masterQueriesObj.instagram;
@@ -69,7 +74,12 @@ var scraper = function (secrets) {
         } else {
           // console.log(results);
           collator.merge(results, function (err, finalPostObject) {
-            if (err) { throw (err); }
+            if (err) { 
+              var collatorErr = {
+                collator: err
+              }
+              return (collatorErr);
+            }
             // return compiled final object
             return callback (null, finalPostObject);
           })
