@@ -14,6 +14,7 @@ describe('instagram: ', function () {
     it('get posts', function (done) {
       instagramUser['54b592a9853862b8268e095f'].last = '897227155268837889_436702183';
       instagram.getPosts(instagramUser, function (err, normalizedPosts) {
+        if (err) { console.log(err); }
         done();
       })
     })

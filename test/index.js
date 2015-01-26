@@ -27,6 +27,9 @@ var testUsers = {
 describe('index: ', function () {
   it('should handle receiving a null network object', function (done) {
     index(testUsers, function (err, collatedPosts) {
+      if (err) {
+        console.log(err);
+      }
       done();
     })
   })
