@@ -29,6 +29,8 @@ describe('index: ', function () {
     index(testUsers, function (err, collatedPosts) {
       if (err) {
         console.log(err);
+      } else {
+        console.log('Success!');
       }
       done();
     })
