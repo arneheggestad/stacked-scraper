@@ -15,10 +15,11 @@ describe('instagram: ', function () {
       instagramUser['54b592a9853862b8268e095f'].last = '897227155268837889_436702183';
       instagram.getPosts(instagramUser, function (err, normalizedPosts) {
         if (err) { console.log(err); }
+        console.log(normalizedPosts);
         done();
       })
     })
-  })
+  }),
   describe('normalize posts: ', function () {
     it('should return an object with 5 posts', function (done) {
       instagram.normalizePosts(goodResponse, function (err, normalizedPosts) {

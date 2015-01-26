@@ -7,7 +7,7 @@ var testUsers = {
       'beau': {
         twitter: secrets.twitterValid,
         instagram: secrets.instagramValid,
-        facebook: secrets.facebookValid
+        facebook: secrets.facebookInvalid
       }
     };
 
@@ -31,7 +31,7 @@ describe('index: ', function () {
       if (err) {
         console.log(err);
       } else {
-        console.log('Success!');
+        console.log(collatedPosts);
       }
       done();
     })
