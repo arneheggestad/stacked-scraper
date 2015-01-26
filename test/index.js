@@ -6,7 +6,8 @@ var should = require('should'),
 var testUsers = {
       'beau': {
         twitter: secrets.twitterValid,
-        instagram: secrets.instagramValid
+        instagram: secrets.instagramValid,
+        facebook: secrets.facebookValid
       }
     };
 

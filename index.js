@@ -78,7 +78,7 @@ var scraper = function (secrets) {
               var collatorErr = {
                 collator: err
               }
-              return (collatorErr);
+              return callback (collatorErr);
             }
             // return compiled final object
             return callback (null, finalPostObject);
